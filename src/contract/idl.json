@@ -1,5 +1,5 @@
 {
-  "address": "9cmzED2ENdQXuvH53Hgw7ENYhBXT69w2JhSsoz1b6ZSN",
+  "address": "E7N3tt6G96BLoD6vXVhztDaD1mGpDEm533jjxKErVaKk",
   "metadata": {
     "name": "chaperone_me",
     "version": "0.1.0",
@@ -294,7 +294,15 @@
           "type": "string"
         },
         {
+          "name": "wallet_address",
+          "type": "string"
+        },
+        {
           "name": "license_uri",
+          "type": "string"
+        },
+        {
+          "name": "photo_id_uri",
           "type": "string"
         },
         {
@@ -456,7 +464,15 @@
             "type": "string"
           },
           {
+            "name": "wallet_address",
+            "type": "string"
+          },
+          {
             "name": "license_uri",
+            "type": "string"
+          },
+          {
+            "name": "photo_id_uri",
             "type": "string"
           },
           {
