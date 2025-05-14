@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import QRCode from './QRCode';
 
-const StampCard = ({ guideName, guideImage }) => {
+const StampCard = ({ guideName, guideImage, qrValue }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -43,7 +43,7 @@ const StampCard = ({ guideName, guideImage }) => {
               <h3 className="text-2xl font-mono font-bold text-gray-800 mb-4">
                 Verify License
               </h3>
-              <QRCode />
+              <QRCode value={qrValue} />
               <p className="mt-4 text-sm text-gray-600 text-center">
                 Scan to verify this tour guide's license
               </p>

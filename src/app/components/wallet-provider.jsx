@@ -12,7 +12,7 @@ const DynamicWalletProvider = dynamic(
     const [
       { ConnectionProvider, WalletProvider },
       { WalletAdapterNetwork },
-      { PhantomWalletAdapter, SolflareWalletAdapter },
+      { PhantomWalletAdapter, SolflareWalletAdapter, LedgerWalletAdapter },
       { WalletModalProvider },
       { clusterApiUrl }
     ] = await Promise.all([
@@ -30,11 +30,16 @@ const DynamicWalletProvider = dynamic(
       // Configure RPC endpoint
       const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-      // Set up wallet adapters
-      const wallets = useMemo(() => [
-        new PhantomWalletAdapter(),
-        new SolflareWalletAdapter()
-      ], []);
+      // Set up wallet adapters with extended capabilities
+      const wallets = useMemo(() => {
+        // Create wallet adapters with all required capabilities
+        return [
+          new PhantomWalletAdapter(),
+          new SolflareWalletAdapter(),
+          // new BackpackWalletAdapter(),
+          new LedgerWalletAdapter()
+        ];
+      }, []);
 
       return (
         <ConnectionProvider endpoint={endpoint}>
